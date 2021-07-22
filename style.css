@@ -1,0 +1,27 @@
+.container {
+  display: grid;
+ flex-direction:auto auto;
+
+ padding: 5rem;
+
+}
+#textArea1 {
+  border-radius: 2px;
+  background-color:aqua;
+
+}
+#textArea2 {
+  border-radius: 2px;
+  background-color:pink;
+  
+}
+#item {
+  color:black;
+  display: flex;
+  flex-direction:column;
+  background-color:blueviolet;
+  padding: 5rem;
+  margin: 2rem;
+  width: 5rem;
+
+}
