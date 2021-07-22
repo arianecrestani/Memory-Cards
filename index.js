@@ -32,31 +32,30 @@ var cardsList = [
 
 ]
 
-const card1 = cardsList[0].question[0];
-const card2 = cardsList[0].answer[1]
+const card1 = cardsList[0].question;
+const card2 = cardsList[0].answer;
 
 
 
 
-const showItemList = (card) => {
+const showItemList = () => {
  
-
-  itemList.appendChild(createItem(card))
+  itemList.appendChild(createItemQuestion(card1))
   textArea1.value = "";
-
   
 }
-const createItem = (card) => {
+const createItemQuestion = (card) => {
   
-  const createCard = document.createElement('div');
-  createCard.id = "item";
-  createCard.innerHTML = card
-  createCard.addEventListener("click", deleteItem);
-  return createCard;
+  const createCardQuestion = document.createElement('div');
+  createCardQuestion.id = "item";
+  createCardQuestion.innerHTML = card
+  createCardQuestion.addEventListener("click", createItemAnswer);
+  return createCardQuestion;
 
 }
-const deleteItem = (event) => {
-  event.target.remove();
+const createItemAnswer = (card) => {
+  itemList.appendChild(createItemQuestion(card2))
+ 
 };
 
 
