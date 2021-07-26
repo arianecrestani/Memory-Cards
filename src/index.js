@@ -1,5 +1,5 @@
 
-const itemList =document.getElementById('itemList1');
+const itemList =document.getElementById('itemList');
 // usar na outra pagina esta lista 
 var cardsList = [
     {

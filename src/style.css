@@ -25,12 +25,4 @@
   width: 5rem;
 
 }
-#itemAnswer {
-  color:black;
-  display: flex;
-  flex-direction:column;
-  background-color:blueviolet;
-  padding: 5rem;
-  margin: 2rem;
-  width: 5rem;
-}
+

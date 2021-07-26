@@ -1,39 +1,59 @@
+const inputArea = document.getElementById("textArea");
+const itemList = document.getElementById("itemList");
 
-const inputArea = document.getElementById('textArea');
-const btnHandler= document.getElementById('btnHandler');
-const itemList =document.getElementById('itemList');
+let tempCard = { question: "", answer: "" };
 
-
-const btnClick = () => {
-  if (inputArea.value.length > 0) {
-    showItemList(inputArea.value);
-  }
- 
-};
-
-const enterPress = (e) => {
-  if (e.key === "Enter") {
-  btnHandler();
-  }
-};
-
-
-inputArea.addEventListener("keypress", enterPress);
-btnHandler.addEventListener("click", btnClick);
+var cardsList = [
+  {
+    question: "familie",
+    answer: "familia",
+  },
+  {
+    question: "flowers",
+    answer: "flores",
+  },
+];
 
 const showItemList = (card) => {
-    itemList.appendChild(createInputQuestion(card));
-    inputArea.value = "";
-    
-  };
+  itemList.appendChild(createItem(card))
+};
 
-const createInputQuestion = (card) => {
-    const item = document.createElement("div");
-    item.id = "addItem";
-    item.innerHTML = card;
-    return item;
-  };
-  const createInputAnswer = (card) => {
-    itemList.appendChild(createInputQuestion(card2))
-   
-  };
+const createItem = (card) => {
+  const itemQuestion = document.createElement("div");
+  itemQuestion.id = "item";
+  itemQuestion.innerText = `question ${card.question} answer ${card.question}`;
+  return itemQuestion;
+};
+
+const addCard = () => {
+  // se o tempCard.question tiver vazio
+  if (tempCard.question === "") {
+    // adicionar o question no tempCard com o inputArea.value
+    tempCard.question = inputArea.value;
+  } else {
+    // se nao
+
+    // adiciona o answer
+    tempCard.answer = inputArea.value;
+    // adicionar o tempCard no cardsList
+
+    cardsList.push(tempCard);
+    // array,,,,,percorrer o cardsList e mostrar cada item na tela
+    cardsList.forEach((element) => {
+      showItemList(element);
+    });
+    // limpar os valores tempCard.question e tempCard.answer
+    tempCard.question= "";
+    tempCard.answer = "";
+  }
+    inputArea.value = "";
+  // limpar o campo inputValue
+};
+
+const pressedEnterEvent = (e) => {
+  if (e.key === "Enter") {
+    addCard();
+  }
+};
+
+inputArea.addEventListener("keypress", pressedEnterEvent);
