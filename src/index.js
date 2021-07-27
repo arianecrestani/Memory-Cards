@@ -26,7 +26,7 @@ const createItemQuestion = (card) => {
   createCardQuestion.id = "item";
   createCardQuestion.innerHTML = card.question;
   createCardQuestion.addEventListener("click", () => {
-  createCardQuestion.innerHTML = card.answer;
+    createCardQuestion.innerHTML = card.answer;
   });
   
   return createCardQuestion;
