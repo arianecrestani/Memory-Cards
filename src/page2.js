@@ -1,4 +1,6 @@
-const nextPage = document.getElementById('secondPage')
+@import {tempCard} from "./code.js"
+
+
 const inputArea = document.getElementById("textArea");
 const itemList = document.getElementById("itemList");
 

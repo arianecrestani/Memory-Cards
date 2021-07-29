@@ -2,14 +2,14 @@
 const itemList =document.getElementById('itemList');
 // usar na outra pagina esta lista 
 var cardsList = [
-    {
-        question:"familie",
-        answer:"familia"
-    },
-    {
-        question:"flowers",
-        answer:"flores"
-    }
+    // {
+    //     question:"familie",
+    //     answer:"familia"
+    // },
+    // {
+    //     question:"flowers",
+    //     answer:"flores"
+    // }
 
 ]
 
